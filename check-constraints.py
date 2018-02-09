@@ -47,7 +47,7 @@ def main(path):
             if ((operator == UNIQUE_OP   and value is not None) or
                 (operator == CLUSTER_OP  and value is None) or
                 (operator == CLUSTER_OP  and value is not None and value == "") or
-                (operator == GROUP_BY_OP and not group_by_value_valid(value)) or
+                (operator == GROUP_BY_OP and not value is None and not group_by_value_valid(value)) or
                 (operator == LIKE_OP     and value is None) or
                 (operator == LIKE_OP     and not un_like_value_valid(value)) or
                 (operator == UNLIKE_OP   and value is None) or
