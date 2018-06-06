@@ -37,7 +37,6 @@ def main(path):
     with open(path, "r") as f:
         content_json = json.load(f)
     apps = content_json["apps"]
-    fc = 0
     for app in apps:
         for constraint in app.get("constraints", []):
             field, operator = constraint[0], constraint[1]
@@ -54,11 +53,3 @@ def main(path):
                 (operator == UNLIKE_OP   and value is None) or
                 (operator == UNLIKE_OP   and not un_like_value_valid(value))):
                 report_invalid_constraint(app["id"], constraint)
-                fc += 1
-
-    if fc > 0:
-        sys.exit(1)
-
-
-if __name__ == "__main__":
-    main(sys.argv[1])
