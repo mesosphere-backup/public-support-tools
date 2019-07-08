@@ -1,5 +1,8 @@
 #!/usr/bin/env python
-# USAGE:  python check-constraints.py path/to/v2/apps/output
+# USAGE: Download output from http://ip-address/service/marathon/v2/apps 
+# E.G 'wget -0 output http://ip-address/service/marathon/v2/apps'
+# and then run 'python check-constraints.py output'
+
 
 import json
 import re
