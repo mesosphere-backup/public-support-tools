@@ -53,3 +53,6 @@ def main(path):
                 (operator == UNLIKE_OP   and value is None) or
                 (operator == UNLIKE_OP   and not un_like_value_valid(value))):
                 report_invalid_constraint(app["id"], constraint)
+
+if __name__== "__main__":
+  main(sys.argv[1])
